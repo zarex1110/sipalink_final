@@ -62,6 +62,9 @@
             <div class="col-xl-3 col-sm-6 d-flex align-items-center mt-10 mb-3 mt-md-0" data-aos="zoom-in"
                 data-aos-delay="100">
                 <div class="icon-box">
+                        @if ($link->vpn == "1")
+                            <img src="assets/img/vpn.png" style="position: absolute; top: 16px; width:25%;">
+                        @endif
                         {{-- <div class="icon"><i class="bx bxl-dribbble"></i></div> --}}
                         <img src="assets/img/logo/{{$link->tags->slug}}.png" class="img-thumbnail mt-0 mb-2" alt="Preview">
                         {{-- {{ image($link-> link) }} --}}
@@ -117,6 +120,9 @@
             <div class="col-xl-3 col-sm-6 g-col-6 g-col-md-4 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in"
                 data-aos-delay="100">
                 <div class="icon-box">
+                        @if ($link->vpn == "1")
+                            <img src="assets/img/vpn.png" style="position: absolute; top: 16px; width:70px;">
+                        @endif
                         {{-- <div class="icon"><i class="bx bxl-dribbble"></i></div> --}}
                         <img src="assets/img/logo/{{$link->tags->slug}}.png" class="img-thumbnail mt-0 mb-2" alt="Preview">
                         {{-- {{ image($link-> link) }} --}}
@@ -169,21 +175,20 @@
                     <div class="d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="100">
                         <div class="icon-box card p-2 justify-content-center align-items-center">
                             {{-- <div class="icon"><i class="bx bxl-dribbble"></i></div> --}}
+                            @if ($link->vpn == "1")
+                                <img src="assets/img/vpn.png" style="position: absolute; top: 15px; left: 10px; width:70px;">
+                            @endif
+
                             <img src="assets/img/logo/{{$link->tags->slug}}.png" class="img-thumbnail mt-0 mb-2" alt="Preview">
 
-                            <h5 class="mt-0 mb-0"><a href="
+                            <h4 class="mt-0 mb-0"><a href="
                                 @if (str_starts_with( $link -> link, 'http'))
                                 {{ $link -> link }}
                                 @else
                                 {{ 'https://' . $link -> link }}
                                 @endif
-                                " target="_blank">{{ $link -> title }}</a></h5>
-
-                            <h5 class="mt-0 mb-0" style="color : black">
-                                {{ $link -> title }}
-                            </h5>
-
-                            <p class="mt-0 mb-0" style="color : black">{{ $link -> link }}</p>
+                                " target="_blank">{{ $link -> title }}</a></h4>
+                            <p class="mt-0 mb-0" style="color : black; font-size: 0.9em">{{ $link -> link }}</p>
                             {{-- <p>Read more .. > </p> --}}
                         </div>
                     </div>

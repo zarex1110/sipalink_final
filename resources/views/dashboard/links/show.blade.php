@@ -1,3 +1,5 @@
+{{-- {{dd($links->vpn)}} --}}
+
 @extends('dashboard.layouts.main')
 
 @section('container')
@@ -28,6 +30,16 @@
 
                               <strong><i class="fas fa-circle-info"></i> Deskripsi</strong>
                               <p class="text-muted">{{ $links->description }}</p>
+
+                              <hr>
+
+                              <strong><i class="fa-solid fa-globe mr-1"></i> VPN</strong>
+                              @if ($links->vpn == 1)
+                                <p class="text-muted"> Harus menggunakan VPN </p>
+                              @else
+                                <p class="text-muted"> Tanpa VPN </p>
+                              @endif
+
 
                               <hr>
 

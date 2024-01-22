@@ -46,7 +46,7 @@ class DashboardLinkController extends Controller
             'vpn' => 'required'
         ]);
 
-        if ($validatedData['vpn'] == "on")
+        if ($validatedData['vpn'] == "1")
             $validatedData['vpn'] = true;
         else
             $validatedData['vpn'] = false;
@@ -95,7 +95,7 @@ class DashboardLinkController extends Controller
                 'image' => 'null'
             ]);
 
-            if ($validatedData['vpn'] == "on")
+            if ($validatedData['vpn'] == "1")
                 $validatedData['vpn'] = true;
             else
                 $validatedData['vpn'] = false;

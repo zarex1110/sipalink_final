@@ -1,3 +1,5 @@
+{{-- {{ dd($links->vpn)}} --}}
+
 @extends('dashboard.layouts.main')
 
 @section('container')
@@ -63,7 +65,9 @@
                             <div class="form-group">
                                 <div class="custom-control custom-switch">
                                     <input type='hidden' class="custom-control-input" id="vpnhidden" name="vpn" value="0">
-                                    <input type="checkbox" class="custom-control-input" id="vpn" name="vpn" value="1" @if(old('vpn',$links->vpn)==="1") checked @endif>
+                                    <input type="checkbox" class="custom-control-input" id="vpn" name="vpn" value="1"
+                                    {{ old('vpn',$links->vpn) == '1' ? 'checked' : '' }}>
+                                    {{-- @if(old('vpn',$links->vpn)==="on") checked @endif> --}}
                                 <label class="custom-control-label" for="vpn">Harus menggunakan VPN</label>
                                 </div>
                             </div>
