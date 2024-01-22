@@ -21,6 +21,7 @@ return new class extends Migration
             $table->foreignId('created_by');
             $table->integer('hit_counter');
             $table->string('image')->nullable();
+            $table->boolean('vpn')->nullable();
         });
     }
 

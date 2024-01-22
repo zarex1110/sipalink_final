@@ -179,7 +179,11 @@
                                 @endif
                                 " target="_blank">{{ $link -> title }}</a></h5>
 
-                            <p class="mt-0 mb-0">{{ $link -> link }}</p>
+                            <h5 class="mt-0 mb-0" style="color : black">
+                                {{ $link -> title }}
+                            </h5>
+
+                            <p class="mt-0 mb-0" style="color : black">{{ $link -> link }}</p>
                             {{-- <p>Read more .. > </p> --}}
                         </div>
                     </div>

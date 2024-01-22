@@ -104,16 +104,18 @@ class DatabaseSeeder extends Seeder
             'link' => 'https://webapps.bps.go.id/kipapp/',
             'tags_id' => '1',
             'created_by' => '1',
-            'hit_counter' => 120
+            'hit_counter' => 120,
+            'vpn' => true
         ]);
 
         Sipalink::create([
             'title' => 'Simpeg BPS',
             'description' => 'Aplikasi penilaian Kepegawaian',
             'link' => 'https://simpeg.bps.go.id/',
-            'tags_id' => rand(1,7),
+            'tags_id' => '1',
             'created_by' => '1',
-            'hit_counter' => 100
+            'hit_counter' => 100,
+            'vpn' => true
         ]);
 
         Sipalink::factory(50)->create();

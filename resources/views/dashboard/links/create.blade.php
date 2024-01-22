@@ -58,6 +58,14 @@
                                 @enderror
                             </div>
 
+                            <div class="form-group">
+                                <div class="custom-control custom-switch">
+                                    <input type='hidden' class="custom-control-input" id="vpnhidden" name="vpn" value="0">
+                                    <input type="checkbox" class="custom-control-input" id="vpn" name="vpn" value="1" @checked(old('vpn'))>
+                                <label class="custom-control-label" for="vpn">Harus menggunakan VPN</label>
+                                </div>
+                            </div>
+
                             <div>
                                     <div class="form-group">
                                       <label>Tags</label>

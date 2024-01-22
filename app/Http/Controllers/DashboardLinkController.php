@@ -42,8 +42,14 @@ class DashboardLinkController extends Controller
             'link' => 'required|max:255|unique:sipalinks',
             'tags_id' => 'required',
             'description' => 'required',
-            'image' => 'null'
+            'image' => 'null',
+            'vpn' => 'required'
         ]);
+
+        if ($validatedData['vpn'] == "on")
+            $validatedData['vpn'] = true;
+        else
+            $validatedData['vpn'] = false;
 
         $validatedData['created_by'] = auth()->user()->id;
         $validatedData['hit_counter'] = 0;
@@ -85,8 +91,14 @@ class DashboardLinkController extends Controller
                 'link' => 'required|max:255',
                 'tags_id' => 'required',
                 'description' => 'required',
+                'vpn' => 'required',
                 'image' => 'null'
             ]);
+
+            if ($validatedData['vpn'] == "on")
+                $validatedData['vpn'] = true;
+            else
+                $validatedData['vpn'] = false;
 
             $validatedData['created_by'] = auth()->user()->id;
 
