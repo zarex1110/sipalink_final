@@ -14,7 +14,7 @@
                 <h2>Sistem Informasi Penyimpanan Link <br> BPS Kota Padang Panjang</h2>
             </div>
             <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
-                <img src="assets/img/hero-img.png" class="img-fluid animated" alt="">
+                <img src={{ asset("assets/img/hero-img.png")}} class="img-fluid animated" alt="">
             </div>
         </div>
     </div>
@@ -46,7 +46,7 @@
     </div>
     <div class="row d-flex justify-content-center align-items-center mb-5">
         <div class="col-md-6">
-            <form action="/">
+            <form action={{ur("/")}}>
                 <div class="input-group">
                     <input type="text" class="form-control rounded" placeholder="Search" name="search" value="{{request('search')}}" aria-label="Search" aria-describedby="search-addon" />
                     <button type="submit" class="btn btn-outline-primary" data-mdb-ripple-init onload="ScrollToTarget">search</button>
