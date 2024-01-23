@@ -46,7 +46,7 @@
                     <!-- /.info-box-content -->
                 </div>
 
-                <a href="/dashboard/links">
+                <a href={{url("/dashboard/links")}}>
                   <button type="button" class="btn btn-block btn-primary">Kelola Link</button>
                 </a>
 

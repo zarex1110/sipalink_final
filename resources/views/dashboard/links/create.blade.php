@@ -24,7 +24,7 @@
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form method="post" action="/dashboard/links">
+                    <form method="post" action={{ url("/dashboard/links")}}>
                         @csrf
                         <div class="card-body">
                             <div class="form-group">

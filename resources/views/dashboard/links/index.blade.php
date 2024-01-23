@@ -22,7 +22,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-body">
-                                <a href="/dashboard/links/create">
+                                <a href={{ url("/dashboard/links/create")}}>
                                     <button type="button" class="btn btn-block btn-primary col-md-2">Tambah Link</button>
                                 </a>
                             </div>
@@ -55,13 +55,13 @@
                                             <td>{{$link->description}}</td>
                                             <td>{{$link->tags->title}}</td>
                                             <td>
-                                                <a href="/dashboard/links/{{ $link->id }}" class="btn btn-info">
+                                                <a href={{ url("/dashboard/links/$link->id") }} class="btn btn-info">
                                                     Show
                                                 </a>
-                                                <a href="/dashboard/links/{{ $link->id }}/edit" class="btn btn-warning">
+                                                <a href={{url("/dashboard/links/$link->id/edit")}} class="btn btn-warning">
                                                     Edit
                                                 </a>
-                                                <form action="/dashboard/links/{{ $link->id }}" method="post" class='d-inline'>
+                                                <form action={{ url("/dashboard/links/$link->id") }} method="post" class='d-inline'>
                                                     @method('delete')
                                                     @csrf
                                                     <button class="btn btn-danger" onclick="return confirm('Are you sure?')">

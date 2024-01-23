@@ -136,7 +136,7 @@
   <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="/dashboard" class="brand-link">
+    <a href={{ url("/dashboard") }} class="brand-link">
       <img src="/AdminLTE/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">Manajemen Link</span>
     </a>
@@ -157,7 +157,7 @@
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <li class="nav-item">
-                <a href="/dashboard" class="nav-link">
+                <a href={{ url("/dashboard") }} class="nav-link">
                     <i class="nav-icon fas fa-chart-line"></i>
                     <p>
                     Dashboard
@@ -166,7 +166,7 @@
                 </a>
             </li>
           <li class="nav-item">
-            <a href="/dashboard/links" class="nav-link">
+            <a href={{ url("/dashboard/links")}} class="nav-link">
               <i class="nav-icon fas fa-link"></i>
               <p>
                 Kelola Link
@@ -175,7 +175,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/setting" class="nav-link">
+            <a href={{url("/setting")}} class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Pengaturan
@@ -183,7 +183,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/logout" class="nav-link">
+            <a href={{ url("/logout") }} class="nav-link">
                 <i class="nav-icon fas fa-right-from-bracket"></i>
                     <p>
                         Logout

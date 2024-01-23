@@ -61,10 +61,10 @@
                     </div><!-- /.col -->
                     <div class="col-sm-4">
                         <h1 class="mb-4"> <span> &#8203; </span> </h1>
-                        <a href="/dashboard/links/{{ $links->id }}/edit" class="btn btn-app bg-warning">
+                        <a href={{ url("/dashboard/links/$links->id/edit") }} class="btn btn-app bg-warning">
                             <i class="fas fa-edit"></i> Edit
                         </a>
-                        <form action="/dashboard/links/{{ $links->id }}" method="post" class='d-inline'>
+                        <form action={{ url("/dashboard/links/$links->id") }} method="post" class='d-inline'>
                             @method('delete')
                             @csrf
                             <button class="btn btn-app bg-danger" onclick="return confirm('Are you sure?')">
