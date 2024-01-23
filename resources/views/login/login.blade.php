@@ -58,7 +58,7 @@
                             </div>
                         @endif
 
-                        <form action="/login" method="post">
+                        <form action={{ url("/login")}} method="post">
                             @csrf
                             <div class="mb-md-5 mt-md-4 pb-5">
                                 <h2 class="fw-bold mb-2 text-uppercase">Manajemen Link</h2>
