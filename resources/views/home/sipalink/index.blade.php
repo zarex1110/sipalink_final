@@ -46,7 +46,7 @@
     </div>
     <div class="row d-flex justify-content-center align-items-center mb-5">
         <div class="col-md-6">
-            <form action={{ur("/")}}>
+            <form action={{url("/")}}>
                 <div class="input-group">
                     <input type="text" class="form-control rounded" placeholder="Search" name="search" value="{{request('search')}}" aria-label="Search" aria-describedby="search-addon" />
                     <button type="submit" class="btn btn-outline-primary" data-mdb-ripple-init onload="ScrollToTarget">search</button>
