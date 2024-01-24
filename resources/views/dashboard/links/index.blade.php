@@ -56,16 +56,16 @@
                                             <td>{{$link->tags->title}}</td>
                                             <td>
                                                 <a href={{ url("/dashboard/links/$link->id") }} class="btn btn-info">
-                                                    Show
+                                                    <i class="fas fa-eye"></i>
                                                 </a>
                                                 <a href={{url("/dashboard/links/$link->id/edit")}} class="btn btn-warning">
-                                                    Edit
+                                                    <i class="fas fa-edit"></i>
                                                 </a>
                                                 <form action={{ url("/dashboard/links/$link->id") }} method="post" class='d-inline'>
                                                     @method('delete')
                                                     @csrf
                                                     <button class="btn btn-danger" onclick="return confirm('Are you sure?')">
-                                                        Delete
+                                                        <i class="fas fa-trash"></i>
                                                     </button>
                                                 </form>
                                             </td>
@@ -144,6 +144,11 @@
                 className: 'dt-nowrap dt-center',
                 targets: -1
             }],
+            // columnDefs: [{
+            //     max-width: 20%,
+            //     width: 20%,
+            //     targets: 0
+            // }],
         });
 
         table

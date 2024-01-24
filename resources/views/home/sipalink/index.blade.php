@@ -61,32 +61,34 @@
             @foreach ( $slinks as $link )
             <div class="col-xl-3 col-sm-6 d-flex align-items-center mt-10 mb-3 mt-md-0" data-aos="zoom-in"
                 data-aos-delay="100">
-                <div class="icon-box">
+                <a href="
+                    @if (str_starts_with( $link -> link, 'http'))
+                        {{ $link -> link }}
+                    @else
+                        {{ 'https://'.$link -> link }}
+                    @endif
+                    "
+                        target="_blank">
+                    <div class="icon-box hovernow">
                         @if ($link->vpn == "1")
-                            <img src="assets/img/vpn.png" style="position: absolute; top: 16px; width:25%;">
+                            <img src="assets/img/vpn.png" style="position: absolute; top: 3px; width:40px;">
                         @endif
                         {{-- <div class="icon"><i class="bx bxl-dribbble"></i></div> --}}
                         <img src="assets/img/logo/{{$link->tags->slug}}.png" class="img-thumbnail mt-0 mb-2" alt="Preview">
                         {{-- {{ image($link-> link) }} --}}
-                        <h4 class="mt-0 mb-0" style="text-align: center"><a href="
-                            @if (str_starts_with( $link -> link, 'http'))
-                                {{ $link -> link }}
-                            @else
-                                {{ 'https://'.$link -> link }}
-                            @endif
-                            "
-                             target="_blank">{{ $link -> title }}</a></h4>
+                        <h4 class="mt-0 mb-0" style="text-align: center">{{ $link -> title }}</h4>
                         {{-- <p>{{ $link -> link }}</p> --}}
 
-                        @if (strlen($link -> link) < 50)
-                            <p class="mt-0 mb-0" style="text-align: center">{{ $link -> link }}</p>
+                        @if (strlen($link -> link) < 30)
+                            <p class="mt-0 mb-0" style="text-align: center; color : black">{{ $link -> link }}</p>
                         @else
-                            <p class="mt-0 mb-0" style="text-align: center">{{ substr_replace($link -> link, "...", 50) }}</p>
+                            <p class="mt-0 mb-0" style="text-align: center; color : black">{{ substr_replace($link -> link, "...", 30) }}</p>
                         @endif
 
                         {{-- <p>{{ $link -> description}}</p> --}}
                         {{-- <p>Read more .. > </p> --}}
-                </div>
+                    </div>
+                </a>
             </div>
             @endforeach
         </div>
@@ -119,9 +121,16 @@
             @foreach ( $links->take(4) as $link )
             <div class="col-xl-3 col-sm-6 g-col-6 g-col-md-4 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in"
                 data-aos-delay="100">
-                <div class="icon-box">
+                <a href="
+                    @if (str_starts_with( $link -> link, 'http'))
+                    {{ $link -> link }}
+                    @else
+                    {{ 'https://' . $link -> link }}
+                    @endif
+                    " target="_blank">
+                <div class="icon-box hovernow">
                         @if ($link->vpn == "1")
-                            <img src="assets/img/vpn.png" style="position: absolute; top: 16px; width:70px;">
+                            <img src="assets/img/vpn.png" style="position: absolute; top: 3px; left: 2px; width:40px;">
                         @endif
                         {{-- <div class="icon"><i class="bx bxl-dribbble"></i></div> --}}
                         <img src="assets/img/logo/{{$link->tags->slug}}.png" class="img-thumbnail mt-0 mb-2" alt="Preview">
@@ -132,17 +141,17 @@
                             @else
                             {{ 'https://' . $link -> link }}
                             @endif
-                            " target="_blank">{{ $link -> title }}</a></h4>
+                            " target="_blank">{{ $link -> title }}</h4>
                         {{-- <p>{{ $link -> link }}</p> --}}
-                        @if (strlen($link -> link) < 50)
-                            <p class="mt-0 mb-0" style="text-align: center">{{ $link -> link }}</p>
+                        @if (strlen($link -> link) < 30)
+                            <p class="mt-0 mb-0" style="text-align: center; color : black">{{ $link -> link }}</p>
                         @else
-                            <p class="mt-0 mb-0" style="text-align: center">{{ substr_replace($link -> link, "...", 50) }}</p>
+                            <p class="mt-0 mb-0" style="text-align: center; color : black">{{ substr_replace($link -> link, "...", 30) }}</p>
                         @endif
                         {{-- <p>{{ $link -> description}}</p> --}}
                         {{-- <p>Read more .. > </p> --}}
                 </div>
-
+                </a>
             </div>
             @endforeach
         </div>
@@ -173,24 +182,30 @@
             <div class="row">
                 <div class="col-lg-3 col-md-5 portfolio-item filter-{{$link->tags->slug}}">
                     <div class="d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="icon-box card p-2 justify-content-center align-items-center">
+                        <a href="
+                            @if (str_starts_with( $link -> link, 'http'))
+                            {{ $link -> link }}
+                            @else
+                            {{ 'https://' . $link -> link }}
+                            @endif
+                            " target="_blank">
+                        <div class="icon-box hovernow card p-2 justify-content-center align-items-center">
                             {{-- <div class="icon"><i class="bx bxl-dribbble"></i></div> --}}
                             @if ($link->vpn == "1")
-                                <img src="assets/img/vpn.png" style="position: absolute; top: 15px; left: 10px; width:70px;">
+                                <img src="assets/img/vpn.png" style="position: absolute; top: 3px; left: 4px; width:40px;">
                             @endif
 
                             <img src="assets/img/logo/{{$link->tags->slug}}.png" class="img-thumbnail mt-0 mb-2" alt="Preview">
 
-                            <h4 class="mt-0 mb-0"><a href="
-                                @if (str_starts_with( $link -> link, 'http'))
-                                {{ $link -> link }}
-                                @else
-                                {{ 'https://' . $link -> link }}
-                                @endif
-                                " target="_blank">{{ $link -> title }}</a></h4>
+                            <h5 class="mt-0 mb-0" style="color : #37517e ">{{ $link -> title }}</h5>
+                            @if (strlen($link -> link) < 30)
                             <p class="mt-0 mb-0" style="color : black; font-size: 0.9em">{{ $link -> link }}</p>
+                            @else
+                            <p class="mt-0 mb-0" style="color : black; font-size: 0.9em">{{ substr_replace($link -> link, "...", 30) }}</p>
+                            @endif
                             {{-- <p>Read more .. > </p> --}}
                         </div>
+                        </a>
                     </div>
                 </div>
             </div>
