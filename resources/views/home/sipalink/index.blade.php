@@ -130,7 +130,7 @@
                     " target="_blank">
                 <div class="icon-box hovernow">
                         @if ($link->vpn == "1")
-                            <img src="assets/img/vpn.png" style="position: absolute; top: 3px; left: 2px; width:40px;">
+                            <img src="assets/img/vpn.png" style="position: absolute; top: 3px; margin-left: -5px; width:40px;">
                         @endif
                         {{-- <div class="icon"><i class="bx bxl-dribbble"></i></div> --}}
                         <img src="assets/img/logo/{{$link->tags->slug}}.png" class="img-thumbnail mt-0 mb-2" alt="Preview">
